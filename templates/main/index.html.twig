@@ -11,10 +11,10 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
+    La liste des produits:
     <ul>
-        <li>Your controller at <code><a href="{{ '/opt/lampp/htdocs/projsecu/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/opt/lampp/htdocs/projsecu/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
+        <li><a href="{{ path('produit')}}">consulter</a></li>
+        <li><a href="{{ path('app_login')}}">retour login</a></li>
     </ul>
 </div>
 {% endblock %}
