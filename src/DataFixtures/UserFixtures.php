@@ -26,6 +26,7 @@ class UserFixtures extends Fixture
         $userAdmin->setPassword($this->passwordEncoder->encodePassword($userAdmin,'passadmin'
          ));
          $manager->persist($userAdmin);
+         $manager->flush();
 
        $user = new User();
        $user->setEmail('baba@orange.fr');
@@ -33,8 +34,7 @@ class UserFixtures extends Fixture
        $user->setPassword($this->passwordEncoder->encodePassword(
             $user,'password'
         ));
-         $manager->persist($user);
-
-      $manager->flush();
+        $manager->persist($user);
+        $manager->flush();
     }
 }
