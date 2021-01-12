@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}ProduitController!{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Produits</h1>
 
-    La liste des produits:
-    <ul>
-        <li><a href="{{ path('produit')}}">consulter</a></li>
-        <li><a href="{{ path('app_login')}}">retour login</a></li>
-    </ul>
+    
+     {% for product in products %}
+      
+       <h2>>Titrer<a href="#">
+         {{ product.name }}
+        </a>
+        </h2>
+     {% endfor %}
 </div>
 {% endblock %}
