@@ -11,15 +11,25 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
+        {% for product in products %}
+      
+       <h2>>Désignation</h2>
+         {{ product.name }}
+    
+        <a href="{{ path('app_produit_maj', {id: product.id})}}">mise à jour
+         {{ product.name }}
+        </a>
+   
+     {% endfor %}
+
     ADMINISTRATEUR
        
             <br></br>
-            <a href="{{ path('produit')}}">Consultation produits</a>>
+            
             <br></br>
             <a href="{{ path('app_produit_creation')}}">Création produit</a>
             <br></br>
-            <a href="{{ path('app_produit_maj'),{id: product.id}
-            }}">mise à jour produit</a>>
+            
             <br></br>
           
         

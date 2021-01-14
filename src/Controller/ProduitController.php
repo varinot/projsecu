@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use App\Repository\ArticlesRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
@@ -75,7 +76,7 @@ class ProduitController extends AbstractController
         $form = $this->createFormBuilder($product)
 
                 ->add('name', TextType::class)
-                ->add('price',TextInteger::class)
+                ->add('price', Integer::class)
                 ->getForm(); 
 
                 $form->handleRequest($request);
