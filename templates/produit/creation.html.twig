@@ -1,0 +1,19 @@
+% extends 'base.html.twig' %}
+
+{% block title 'nouveau produit en création' %}
+
+{% block body %}
+    
+    <h1>CREATION PRODUIT</h1>
+    
+    {{ form_start(formulaireproduct) }}
+       {{ form_widget(formulaireproduct) }} 
+
+    <br>
+       <input type="submit" value="Création Produit" formnovalidate>
+    </br>
+    {{ form_end(formulaireproduct) }}
+    
+    
+    <a href="{{ path('app_main')}}">retour accueil</a>
+{% endblock %}

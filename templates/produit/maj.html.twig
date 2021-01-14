@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'produit en mise à jour' %}
+
+{% block body %}
+    
+    <h1>MISE A JOUR PRODUIT</h1>
+    
+    {{ form_start(formulaireproduct) }}
+        <br>
+       {{ form_widget(formulaireproduct) }} 
+        <br>
+       <input type="submit" value="MAJ Produit" formnovalidate>
+        </br>
+    {{ form_end(formulaireproduct) }}
+    
+    
+    <a href="{{ path('app_main')}}">retour accueil</a>
+{% endblock %}

@@ -9,15 +9,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/main/{id}", name="main")
+     * @Route("/", name="app_main")
      */
-    public function index($id): Response
+    public function index(): Response
     {
-        $userRepository = $this->getdoctrine()->getRepository(User::class);
-        $users = $userRepository->find($id);
-       // return $this->$array[];
-        //if(user.roles === ["ROLE_USER","ROLE_ADMIN"])
-
+       $user = $this->getUser(); 
+       
+        
     return $this->render('main/index.html.twig', [
         'controller_name' => 'MainController',]);
     }  

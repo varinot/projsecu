@@ -36,14 +36,17 @@ class User implements UserInterface
      */
     private $password;
 
+    
+
     /**
-     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="user", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Usercomments::class, mappedBy="user", orphanRemoval=true)
      */
-    private $comments;
+    private $usercomments;
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
+        $this->usercomments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -124,30 +127,31 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
+    
     /**
-     * @return Collection|Comments[]
+     * @return Collection|Usercomments[]
      */
-    public function getComments(): Collection
+    public function getUsercomments(): Collection
     {
-        return $this->comments;
+        return $this->usercomments;
     }
 
-    public function addComment(Comments $comment): self
+    public function addUsercomment(Usercomments $usercomment): self
     {
-        if (!$this->comments->contains($comment)) {
-            $this->comments[] = $comment;
-            $comment->setUser($this);
+        if (!$this->usercomments->contains($usercomment)) {
+            $this->usercomments[] = $usercomment;
+            $usercomment->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeComment(Comments $comment): self
+    public function removeUsercomment(Usercomments $usercomment): self
     {
-        if ($this->comments->removeElement($comment)) {
+        if ($this->usercomments->removeElement($usercomment)) {
             // set the owning side to null (unless already changed)
-            if ($comment->getUser() === $this) {
-                $comment->setUser(null);
+            if ($usercomment->getUser() === $this) {
+                $usercomment->setUser(null);
             }
         }
 

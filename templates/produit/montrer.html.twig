@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title product.name %}
+
+{% block body %}
+    <style>
+    .example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: grey; padding: 2px 6px; }
+    </style>
+    <h1>{{ product.name }}</h1>
+    <br>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.price }}</p> 
+    </br>
+    
+    <a href="{{ path('app_login')}}">mise à jour produit</a>
+{% endblock %}
