@@ -12,11 +12,14 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     <p>
-    votre email 
+    DETAIL PRODUIT
     </p>
-    <ul>
-        <li>Your controller at <code><a href="{{ '/opt/lampp/htdocs/projsecu/src/Controller/ProfilController.php'|file_link(0) }}">src/Controller/ProfilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/opt/lampp/htdocs/projsecu/templates/profil/index.html.twig'|file_link(0) }}">templates/profil/index.html.twig</a></code></li>
-    </ul>
+    <h2>>Désignation</h2>
+         {{ product.name }}
+    <p>
+    votre COMMENTAIRE SUR CE PRODUIT
+    </p>
+    <br></br>
+          
 </div>
 {% endblock %}
